@@ -400,6 +400,8 @@ void _GetShortPathWithCycle(Maze* maze,Point cur,Point pre,Point entry,SeqStack*
     left.col -=1;
     _GetShortPathWithCycle(maze,left,cur,entry,cur_path,short_path);
 
+    //5.四个方向找完了，再进行出栈
+    SeqStackPop(cur_path);
 }
 
 void GetShortPathWithCycle(Maze* maze,Point entry)
